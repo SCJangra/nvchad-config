@@ -6,14 +6,17 @@ local M = {}
 -- example of changing theme:
 
 M.ui = {
-  theme = "onedark",
+  theme = 'onedark',
   hl_add = {
     Folded = { fg = '#abb2bf', bg = '#252931' },
+    DiagnosticUnderlineHint = { underdashed = true, sp = '#de98fd' },
+    DiagnosticUnderlineInfo = { underline = true, sp = 'LightBlue' },
+    DiagnosticUnderlineWarn = { undercurl = true, sp = '#e7c787' },
+    DiagnosticUnderlineError = { underdouble = true, sp = '#e06c75' },
   },
   hl_override = {
-    Function = { bold = true, italic = true },
-    TSFunction = { bold = true, italic = true },
     Comment = { italic = true },
+    ['@function'] = { bold = true, italic = true },
   },
   transparency = false,
 }
