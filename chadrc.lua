@@ -15,7 +15,7 @@ M.ui = {
     DiagnosticUnderlineError = { underdouble = true, sp = '#e06c75' },
   },
   hl_override = {
-    Comment = { italic = true },
+    Comment = { italic = false },
     ['@function'] = { bold = true, italic = true },
   },
   transparency = false,
