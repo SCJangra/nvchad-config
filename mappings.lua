@@ -35,7 +35,8 @@ set('n', '<leader>f', '<CMD>Telescope find_files<CR>', { desc = 'Find files' })
 set('n', '<leader>g', '<CMD>lua require("neogit").open()<CR>', { desc = 'Neogit' })
 set('n', '<leader>u', '<CMD>NvChadUpdate<CR>', { desc = 'Update NvChad' })
 set('t', '<C-x>', termcodes '<C-\\><C-N>', { desc = '   escape terminal mode' })
-set('n', '<leader>m', '<CMD>lua require("nabla").popup()<CR>', { desc = 'Math' })
+set('n', '<leader>mm', '<CMD>lua require("nabla").popup()<CR>', { desc = 'Math popup' })
+set('n', '<leader>mr', '<CMD>lua require("nabla").replace_current()<CR>', { desc = 'Math replace' })
 
 -- LSP
 set('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>', { desc = 'LSP definition' })
