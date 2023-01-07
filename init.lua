@@ -9,7 +9,7 @@ local g, opt = vim.g, vim.opt
 g.mapleader = ','
 require 'custom.mappings'
 
-opt.guifont = 'IosevkaSCJ Nerd Font:h16'
+opt.guifont = 'IosevkaSCJ Nerd Font:h14'
 opt.whichwrap = '<,>,[,],b,s'
 opt.scrolloff = 10
 opt.conceallevel = 2
