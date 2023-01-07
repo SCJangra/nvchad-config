@@ -34,7 +34,9 @@ return {
       'nvim-lua/plenary.nvim',
     },
   },
-  ['folke/neodev.nvim'] = {},
+  ['folke/neodev.nvim'] = {
+    module = 'neodev',
+  },
   ['jose-elias-alvarez/null-ls.nvim'] = {
     after = 'nvim-lspconfig',
     config = function()
@@ -42,6 +44,7 @@ return {
     end,
   },
   ['anuvyklack/pretty-fold.nvim'] = {
+    after = 'nvim-treesitter',
     config = function()
       require('pretty-fold').setup {
         fill_char = ' ',
@@ -49,43 +52,25 @@ return {
       }
     end,
   },
-  ['nvim-neorg/neorg'] = {
-    -- run = ':Neorg sync-parsers', -- This is the important bit!
-    config = function()
-      require 'custom.plugins.neorg'
-    end,
-    requires = 'nvim-lua/plenary.nvim',
+  ['iamcco/markdown-preview.nvim'] = {
+    run = 'cd app && npm install',
+    ft = 'markdown',
   },
-  ['booperlv/nvim-gomove'] = {
-    config = function()
-      require 'custom.plugins.nvim-gomove'
-    end,
+  ['nvim-treesitter/playground'] = {
+    after = 'nvim-treesitter',
   },
+  ['jbyuki/nabla.nvim'] = {
+    module = 'nabla',
+  },
+  -- Builtin plugins
   ['neovim/nvim-lspconfig'] = {
     config = function()
       require 'plugins.configs.lspconfig'
       require 'custom.plugins.lspconfig'
     end,
   },
-  ['iamcco/markdown-preview.nvim'] = {
-    run = 'cd app && npm install',
-    ft = 'markdown',
-  },
   ['folke/which-key.nvim'] = {
     disable = false,
-  },
-  ['glacambre/firenvim'] = {
-    run = function()
-      vim.fn['firenvim#install'](0)
-    end,
-  },
-  ['kylechui/nvim-surround'] = {
-    config = function()
-      require 'custom.plugins.nvim-surround'
-    end,
-  },
-  ['nvim-treesitter/playground'] = {
-    after = 'nvim-treesitter',
   },
   ['windwp/nvim-autopairs'] = {
     config = function()
@@ -98,5 +83,24 @@ return {
       require 'custom.plugins.luasnip'
       require('plugins.configs.others').luasnip()
     end,
+  },
+  -- The below plugins are not lazy loaded
+  ['booperlv/nvim-gomove'] = {
+    config = function()
+      require 'custom.plugins.nvim-gomove'
+    end,
+  },
+  ['kylechui/nvim-surround'] = {
+    config = function()
+      require 'custom.plugins.nvim-surround'
+    end,
+  },
+  ['nvim-neorg/neorg'] = {
+    -- ft = 'norg',
+    run = ':Neorg sync-parsers',
+    config = function()
+      require 'custom.plugins.neorg'
+    end,
+    requires = 'nvim-lua/plenary.nvim',
   },
 }
