@@ -62,6 +62,13 @@ return {
   ['jbyuki/nabla.nvim'] = {
     module = 'nabla',
   },
+  ['folke/trouble.nvim'] = {
+    requires = 'kyazdani42/nvim-web-devicons',
+    after = 'nvim-lspconfig',
+    config = function()
+      require('trouble').setup {}
+    end,
+  },
   -- Builtin plugins
   ['neovim/nvim-lspconfig'] = {
     config = function()

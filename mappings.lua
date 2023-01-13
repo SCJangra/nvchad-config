@@ -50,6 +50,7 @@ set('n', '<leader>ll', '<CMD>lua vim.diagnostic.open_float()<CR>', { desc = 'Sho
 set('n', '<leader>lj', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Next diagnostic' })
 set('n', '<leader>lk', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Prev diagnostic' })
 set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
+set('n', '<leader>lt', '<CMD>TroubleToggle workspace_diagnostics<CR>', { desc = 'Trouble workspace_diagnostics' })
 
 -- Execute tasks/builds
 set('n', '<leader>xr', '<CMD>lua require("yabs"):run_task("run")<CR>', { desc = 'Run' })
