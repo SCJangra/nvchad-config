@@ -1,11 +1,6 @@
--- example file i.e lua/custom/init.lua
+local opt, g = vim.opt, vim.g
 
--- load your globals, autocmds here or anything .__.
-
-require 'custom.autocmds'
-require 'custom.digraphs'
-local g, opt = vim.g, vim.opt
-
+-- Mapleader MUST be set before loading mappings
 g.mapleader = ','
 require 'custom.mappings'
 
@@ -13,17 +8,7 @@ opt.guifont = 'IosevkaSCJ Nerd Font:h14'
 opt.whichwrap = '<,>,[,],b,s'
 opt.scrolloff = 10
 opt.conceallevel = 2
--- opt.timeoutlen = 100
 
--- Fold
--- vim.cmd [[ set fillchars=fold:\ ]]
-opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
-opt.foldminlines = 1
--- opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
--- opt.foldcolumn = '1'
-
-if vim.g.started_by_firenvim then
-  -- opt.number = false
-  opt.signcolumn = 'no'
-end
+-- Folding
+-- opt.foldmethod = 'expr'
+-- opt.foldexpr = 'nvim_treesitter#foldexpr()'

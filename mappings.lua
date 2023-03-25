@@ -35,8 +35,6 @@ set('n', '<leader>f', '<CMD>Telescope find_files<CR>', { desc = 'Find files' })
 set('n', '<leader>g', '<CMD>lua require("neogit").open()<CR>', { desc = 'Neogit' })
 set('n', '<leader>u', '<CMD>NvChadUpdate<CR>', { desc = 'Update NvChad' })
 set('t', '<C-x>', termcodes '<C-\\><C-N>', { desc = '   escape terminal mode' })
-set('n', '<leader>mm', '<CMD>lua require("nabla").popup()<CR>', { desc = 'Math popup' })
-set('n', '<leader>mr', '<CMD>lua require("nabla").replace_current()<CR>', { desc = 'Math replace' })
 
 -- LSP
 set('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>', { desc = 'LSP definition' })
@@ -50,31 +48,8 @@ set('n', '<leader>ll', '<CMD>lua vim.diagnostic.open_float()<CR>', { desc = 'Sho
 set('n', '<leader>lj', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Next diagnostic' })
 set('n', '<leader>lk', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Prev diagnostic' })
 set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
-set('n', '<leader>lt', '<CMD>TroubleToggle workspace_diagnostics<CR>', { desc = 'Trouble workspace_diagnostics' })
-
--- Execute tasks/builds
-set('n', '<leader>xr', '<CMD>lua require("yabs"):run_task("run")<CR>', { desc = 'Run' })
-set('n', '<leader>xb', '<CMD>lua require("yabs"):run_task("build")<CR>', { desc = 'Build' })
-set('n', '<leader>xt', '<CMD>lua require("yabs"):run_task("test")<CR>', { desc = 'Test' })
-
--- Packer
-set('n', '<leader>ps', '<CMD>PackerSync<CR>', { desc = 'Sync' })
-set('n', '<leader>pS', '<CMD>PackerStatus<CR>', { desc = 'Status' })
 
 -- Search
-set('n', '<leader>sp', function()
-  if package.loaded['telescope'] then
-    require('telescope').extensions.projects.projects()
-    return
-  end
-
-  vim.cmd 'Telescope projects'
-  vim.api.nvim_input '<ESC>'
-
-  vim.schedule(function()
-    require('telescope').extensions.projects.projects()
-  end)
-end, { desc = 'Projects' })
 set('n', '<leader>st', '<CMD>Telescope live_grep<CR>', { desc = 'Text' })
 set('n', '<leader>sh', '<CMD>Telescope highlights<CR>', { desc = 'Highlights' })
 
