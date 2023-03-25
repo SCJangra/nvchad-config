@@ -18,11 +18,27 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make'
+    },
+  },
 
   -- override plugin configs
   { "williamboman/mason.nvim",         opts = overrides.mason },
   { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
   { "nvim-tree/nvim-tree.lua",         opts = overrides.nvimtree },
+
+  -- External plugins
+  {
+    'TimUntersberger/neogit',
+    config = function ()
+      require('custom.configs.neogit')
+    end
+  }
 }
 
 return plugins
