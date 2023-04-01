@@ -1,44 +1,45 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require 'custom.configs.overrides'
 
 ---@type NvPluginSpec[]
 local plugins = {
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        'jose-elias-alvarez/null-ls.nvim',
         config = function()
-          require "custom.configs.null-ls"
+          require 'custom.configs.null-ls'
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require 'plugins.configs.lspconfig'
+      require 'custom.configs.lspconfig'
     end, -- Override to setup mason-lspconfig
   },
   {
-    "nvim-telescope/telescope.nvim",
+    'nvim-telescope/telescope.nvim',
     opts = overrides.telescope,
     dependencies = {
       'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make'
+      build = 'make',
     },
   },
 
   -- override plugin configs
-  { "williamboman/mason.nvim",         opts = overrides.mason },
-  { "nvim-treesitter/nvim-treesitter", opts = overrides.treesitter },
-  { "nvim-tree/nvim-tree.lua",         opts = overrides.nvimtree },
+  { 'williamboman/mason.nvim', opts = overrides.mason },
+  { 'nvim-treesitter/nvim-treesitter', opts = overrides.treesitter },
+  { 'nvim-tree/nvim-tree.lua', opts = overrides.nvimtree },
+  { 'lewis6991/gitsigns.nvim', opts = overrides.gitsigns },
 
   -- External plugins
   {
     'TimUntersberger/neogit',
-    config = function ()
-      require('custom.configs.neogit')
-    end
-  }
+    config = function()
+      require 'custom.configs.neogit'
+    end,
+  },
 }
 
 return plugins

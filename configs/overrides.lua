@@ -1,5 +1,12 @@
 local M = {}
 
+M.gitsigns = {
+  signs = {
+    add = { text = '▌' },
+    change = { text = '▌' },
+  },
+}
+
 M.treesitter = {
   ensure_installed = 'all',
   indent = {
