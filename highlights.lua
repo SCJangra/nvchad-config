@@ -6,12 +6,17 @@ local M = {}
 
 ---@type Base46HLGroupsList
 M.override = {
-  Comment = {
-    italic = true,
-  },
+  Comment = { italic = true },
+  ['@function'] = { bold = true, italic = true },
+  ['@function.call'] = { bold = true, italic = true },
 }
 
 ---@type HLTable
-M.add = { }
+M.add = {
+  DiagnosticUnderlineHint = { underdashed = true, sp = 'purple' },
+  DiagnosticUnderlineInfo = { underline = true, sp = 'LightBlue' },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = 'base0A' },
+  DiagnosticUnderlineError = { undercurl = true, sp = 'base08' },
+}
 
 return M
