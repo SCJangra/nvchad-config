@@ -52,6 +52,7 @@ set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
 -- Search
 set('n', '<leader>st', '<CMD>Telescope live_grep<CR>', { desc = 'Text' })
 set('n', '<leader>sh', '<CMD>Telescope highlights<CR>', { desc = 'Highlights' })
+set('n', '<leader>sc', '<CMD>Telescope themes<CR>', { desc = 'Colorschemes' })
 
 -- TBufLine
 set('n', 'L', '<CMD>lua require("nvchad_ui.tabufline").tabuflineNext()<CR>', { desc = 'Next buffer' })
