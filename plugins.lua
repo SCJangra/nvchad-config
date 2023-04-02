@@ -40,6 +40,25 @@ local plugins = {
       require 'custom.configs.neogit'
     end,
   },
+  {
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    lazy = false,
+    opts = {
+      load = {
+        ['core.defaults'] = {}, -- Loads default behaviour
+        ['core.norg.concealer'] = {}, -- Adds pretty icons to your documents
+        ['core.norg.dirman'] = { -- Manages Neorg workspaces
+          config = {
+            workspaces = {
+              notes = '/run/media/scj/Storage/docs/neorg',
+            },
+          },
+        },
+      },
+    },
+    dependencies = { { 'nvim-lua/plenary.nvim' } },
+  },
 }
 
 return plugins
