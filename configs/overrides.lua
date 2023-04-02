@@ -33,7 +33,7 @@ M.nvimtree = {
   },
 
   view = {
-    signcolumn = true,
+    signcolumn = 'yes',
   },
 
   renderer = {
