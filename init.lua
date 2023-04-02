@@ -8,6 +8,7 @@ opt.guifont = 'IosevkaSCJ Nerd Font:h14'
 opt.whichwrap = '<,>,[,],b,s'
 opt.scrolloff = 10
 opt.conceallevel = 2
+opt.clipboard = '' -- Reemove clipboard options
 
 -- Folding
 -- opt.foldmethod = 'expr'
