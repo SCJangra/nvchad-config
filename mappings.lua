@@ -37,6 +37,8 @@ set('n', '<leader>g', '<CMD>lua require("neogit").open()<CR>', { desc = 'Neogit'
 set('n', '<leader>u', '<CMD>NvChadUpdate<CR>', { desc = 'Update NvChad' })
 set('t', '<C-x>', termcodes '<C-\\><C-N>', { desc = '   escape terminal mode' })
 set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to clipboard' })
+set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste after from clipboard' })
+set({ 'n', 'v' }, '<leader>P', '"+P', { desc = 'Paste before from clipboard' })
 
 -- LSP
 set('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>', { desc = 'LSP definition' })
