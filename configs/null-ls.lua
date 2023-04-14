@@ -1,4 +1,5 @@
 local present, null_ls = pcall(require, 'null-ls')
+local utils = require 'custom.utils'
 
 if not present then
   return
@@ -15,14 +16,5 @@ null_ls.setup {
   debug = true,
   sources = sources,
   -- you can reuse a shared lspconfig on_attach callback here
-  on_attach = function(client, bufnr)
-    if client.supports_method 'textDocument/formatting' then
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.format { buffer = bufnr }
-        end,
-      })
-    end
-  end,
+  on_attach = utils.setup_auto_format,
 }
