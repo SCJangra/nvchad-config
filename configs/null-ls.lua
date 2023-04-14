@@ -9,9 +9,6 @@ local b = null_ls.builtins
 local sources = {
   b.formatting.stylua,
   b.formatting.prettierd,
-  b.formatting.rustfmt.with {
-    extra_args = { '--edition=2021' },
-  },
 }
 
 null_ls.setup {
