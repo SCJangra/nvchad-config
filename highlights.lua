@@ -9,14 +9,17 @@ M.override = {
   Comment = { italic = true },
   ['@function'] = { bold = true, italic = true },
   ['@function.call'] = { bold = true, italic = true },
+  IncSearch = { bold = true },
+  Search = { link = 'IncSearch' },
 }
 
 ---@type HLTable
 M.add = {
   DiagnosticUnderlineHint = { underdashed = true, sp = 'purple' },
   DiagnosticUnderlineInfo = { underline = true, sp = 'LightBlue' },
-  DiagnosticUnderlineWarn = { undercurl = true, sp = 'base0A' },
-  DiagnosticUnderlineError = { undercurl = true, sp = 'base08' },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = 'yellow' },
+  DiagnosticUnderlineError = { undercurl = true, sp = 'red' },
+  TelescopeMatching = { link = 'IncSearch' },
 }
 
 return M
