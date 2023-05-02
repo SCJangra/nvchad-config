@@ -4,6 +4,8 @@ local on_attach = require('plugins.configs.lspconfig').on_attach
 local capabilities = require('plugins.configs.lspconfig').capabilities
 
 local lspconfig = require 'lspconfig'
+
+local settings = require 'custom.configs.lspconfig.settings'
 local utils = require 'custom.utils'
 
 local navic = require 'nvim-navic'
@@ -37,5 +39,6 @@ for _, s in ipairs(servers) do
       end
     end,
     capabilities = capabilities,
+    settings = settings[s.name],
   }
 end
