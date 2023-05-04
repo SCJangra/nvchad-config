@@ -1,3 +1,5 @@
+require 'custom.autocommands'
+
 local opt, g = vim.opt, vim.g
 
 -- Mapleader MUST be set before loading mappings
