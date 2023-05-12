@@ -14,6 +14,7 @@ local navic = require 'nvim-navic'
 local servers = {
   { name = 'rust_analyzer', formatting = true },
   { name = 'tsserver',      formatting = false },
+  { name = 'bashls',        formatting = true },
 }
 
 capabilities.textDocument.foldingRange = {
