@@ -25,12 +25,13 @@ local plugins = {
   },
 
   -- override plugin configs
-  { 'williamboman/mason.nvim',         opts = overrides.mason },
+  { 'williamboman/mason.nvim', opts = overrides.mason },
   { 'nvim-treesitter/nvim-treesitter', opts = overrides.treesitter },
-  { 'nvim-tree/nvim-tree.lua',         opts = overrides.nvimtree },
-  { 'lewis6991/gitsigns.nvim',         opts = overrides.gitsigns },
+  { 'nvim-tree/nvim-tree.lua', opts = overrides.nvimtree },
+  { 'lewis6991/gitsigns.nvim', opts = overrides.gitsigns },
 
   -- External plugins
+  require 'custom.configs.code_runner',
   {
     'SmiteshP/nvim-navic',
     dependencies = 'neovim/nvim-lspconfig',
@@ -79,9 +80,9 @@ local plugins = {
     lazy = false,
     opts = {
       load = {
-        ['core.defaults'] = {},  -- Loads default behaviour
+        ['core.defaults'] = {}, -- Loads default behaviour
         ['core.concealer'] = {}, -- Adds pretty icons to your documents
-        ['core.dirman'] = {      -- Manages Neorg workspaces
+        ['core.dirman'] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = '/run/media/scj/Storage/docs/neorg',
