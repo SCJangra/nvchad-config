@@ -5,6 +5,7 @@ local run = {
   debug = 'Run debug',
   release = 'Run release',
   tests = 'Run tests',
+  check = 'Check',
 }
 
 local rust = {
@@ -26,17 +27,29 @@ local rust = {
       ['Multi node devl'] = 'cargo build --release --features development && ./scripts/start_multi_node.sh',
     },
   },
+  ['Check'] = {
+    normal = 'cargo check',
+    vtb = {
+      ['All'] = 'cargo check',
+      ['Package'] = 'cargo check -p ',
+    },
+  },
 }
 
 local run_vtb_node = function(arg)
   local keys = tbl_keys(rust[arg].vtb)
   local commands = require 'code_runner.commands'
 
-  ui.select(
-    keys,
-    { prompt = 'Select run option' },
-    function(choice) commands.modes.tab(rust[arg].vtb[choice], arg .. ' ' .. choice) end
-  )
+  ui.select(keys, { prompt = 'Select option' }, function(choice)
+    if not choice or choice == '' then
+      return
+    end
+
+    if arg ~= run.check then
+      commands.modes.tab(rust[arg].vtb[choice], arg .. ' ' .. choice)
+      return
+    end
+  end)
 end
 
 return {
@@ -56,7 +69,9 @@ return {
           return
         end
 
-        if project.name == 'VTB' then run_vtb_node(arg) end
+        if project.name == 'VTB' then
+          run_vtb_node(arg)
+        end
       end,
     },
     project = {
@@ -71,18 +86,31 @@ return {
   keys = {
     {
       '<leader>xr',
-      function() require('code_runner.commands').run_code(vim.o.filetype, run.release) end,
+      function()
+        require('code_runner.commands').run_code(vim.o.filetype, run.release)
+      end,
       desc = run.release,
     },
     {
       '<leader>xd',
-      function() require('code_runner.commands').run_code(vim.o.filetype, run.debug) end,
+      function()
+        require('code_runner.commands').run_code(vim.o.filetype, run.debug)
+      end,
       desc = run.debug,
     },
     {
       '<leader>xt',
-      function() require('code_runner.commands').run_code(vim.o.filetype, run.tests) end,
+      function()
+        require('code_runner.commands').run_code(vim.o.filetype, run.tests)
+      end,
       desc = run.tests,
+    },
+    {
+      '<leader>xc',
+      function()
+        require('code_runner.commands').run_code(vim.o.filetype, run.check)
+      end,
+      desc = run.check,
     },
   },
 }
