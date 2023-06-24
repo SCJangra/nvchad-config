@@ -8,9 +8,7 @@ local plugins = {
       -- format & linting
       {
         'jose-elias-alvarez/null-ls.nvim',
-        config = function()
-          require 'custom.configs.null-ls'
-        end,
+        config = function() require 'custom.configs.null-ls' end,
       },
     },
     config = function()
@@ -71,9 +69,7 @@ local plugins = {
   },
   {
     'TimUntersberger/neogit',
-    config = function()
-      require 'custom.configs.neogit'
-    end,
+    config = function() require 'custom.configs.neogit' end,
   },
   {
     'nvim-neorg/neorg',

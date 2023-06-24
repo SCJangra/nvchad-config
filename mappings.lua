@@ -1,19 +1,13 @@
 local api = vim.api
 local set = vim.keymap.set
 
-local function termcodes(str)
-  return api.nvim_replace_termcodes(str, true, true, true)
-end
+local function termcodes(str) return api.nvim_replace_termcodes(str, true, true, true) end
 
 -- Comment
-set('n', '<leader>/', function()
-  require('Comment.api').toggle.linewise.current()
-end, { desc = 'Toggle comment' })
+set('n', '<leader>/', function() require('Comment.api').toggle.linewise.current() end, { desc = 'Toggle comment' })
 set('v', '<leader>/', function()
   api.nvim_input '<ESC>'
-  vim.schedule(function()
-    require('Comment.api').toggle.linewise(vim.fn.visualmode())
-  end)
+  vim.schedule(function() require('Comment.api').toggle.linewise(vim.fn.visualmode()) end)
 end, { desc = 'Toggle comment' })
 
 -- Window movement
@@ -59,9 +53,10 @@ set('n', '<leader>sh', '<CMD>Telescope highlights<CR>', { desc = 'Highlights' })
 set('n', '<leader>sc', '<CMD>Telescope themes<CR>', { desc = 'Colorschemes' })
 set('n', '<leader>sp', '<CMD>Telescope resume<CR>', { desc = 'Resume previous search' })
 set('n', '<leader>sg', function()
-  vim.ui.input({ prompt = 'Enter grep text' }, function(input)
-    require('telescope.builtin').grep_string { search = input }
-  end)
+  vim.ui.input(
+    { prompt = 'Enter grep text' },
+    function(input) require('telescope.builtin').grep_string { search = input } end
+  )
 end, { desc = 'Grep string' })
 
 -- TBufLine
