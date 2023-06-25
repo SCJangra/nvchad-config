@@ -53,17 +53,17 @@ set('n', '<leader>sh', '<CMD>Telescope highlights<CR>', { desc = 'Highlights' })
 set('n', '<leader>sc', '<CMD>Telescope themes<CR>', { desc = 'Colorschemes' })
 set('n', '<leader>sp', '<CMD>Telescope resume<CR>', { desc = 'Resume previous search' })
 set('n', '<leader>sg', function()
-  vim.ui.input(
-    { prompt = 'Enter grep text' },
-    function(input) require('telescope.builtin').grep_string { search = input } end
-  )
+  vim.ui.input({ prompt = 'Enter grep text', center = true }, function(input)
+    if not input then return end
+    require('telescope.builtin').grep_string { search = input }
+  end)
 end, { desc = 'Grep string' })
 
 -- TBufLine
 set('n', 'L', '<CMD>lua require("nvchad_ui.tabufline").tabuflineNext()<CR>', { desc = 'Next buffer' })
 set('n', 'H', '<CMD>lua require("nvchad_ui.tabufline").tabuflinePrev()<CR>', { desc = 'Prev buffer' })
-set('n', '<C-S-l>', '<CMD>tabnext<CR>', { desc = 'Next Tab' })
-set('n', '<C-S-h>', '<CMD>tabprevious<CR>', { desc = 'Prev Tab' })
+set('n', '<C-L>', '<CMD>tabnext<CR>', { desc = 'Next Tab' })
+set('n', '<C-H>', '<CMD>tabprevious<CR>', { desc = 'Prev Tab' })
 
 -- Luasnip
 set('i', '<C-l>', '<CMD>lua require("luasnip").jump(1)<CR>', { desc = 'Luasnip jump next' })
