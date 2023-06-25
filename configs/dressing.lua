@@ -15,5 +15,10 @@ return {
         end
       end,
     },
+    input = {
+      get_config = function(opts)
+        if opts.center then return { relative = 'win' } end
+      end,
+    },
   },
 }
