@@ -62,8 +62,8 @@ end, { desc = 'Grep string' })
 -- TBufLine
 set('n', 'L', '<CMD>lua require("nvchad_ui.tabufline").tabuflineNext()<CR>', { desc = 'Next buffer' })
 set('n', 'H', '<CMD>lua require("nvchad_ui.tabufline").tabuflinePrev()<CR>', { desc = 'Prev buffer' })
-set('n', '<C-L>', '<CMD>tabnext<CR>', { desc = 'Next Tab' })
-set('n', '<C-H>', '<CMD>tabprevious<CR>', { desc = 'Prev Tab' })
+set('n', '<A-l>', '<CMD>tabnext<CR>', { desc = 'Next Tab' })
+set('n', '<A-h>', '<CMD>tabprevious<CR>', { desc = 'Prev Tab' })
 
 -- Luasnip
 set('i', '<C-l>', '<CMD>lua require("luasnip").jump(1)<CR>', { desc = 'Luasnip jump next' })
