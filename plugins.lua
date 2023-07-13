@@ -31,6 +31,7 @@ local plugins = {
   -- External plugins
   require 'custom.configs.code_runner',
   require 'custom.configs.dressing',
+  { 'lvimuser/lsp-inlayhints.nvim', config = true },
   {
     'SmiteshP/nvim-navic',
     dependencies = 'neovim/nvim-lspconfig',
@@ -38,37 +39,37 @@ local plugins = {
       separator = '  ',
       highlight = true,
       icons = {
-        File = ' ',
-        Module = ' ',
-        Namespace = ' ',
-        Package = ' ',
-        Class = ' ',
-        Method = ' ',
-        Property = ' ',
-        Field = ' ',
-        Constructor = ' ',
-        Enum = '練',
-        Interface = '練',
-        Function = ' ',
-        Variable = ' ',
-        Constant = ' ',
-        String = ' ',
-        Number = ' ',
-        Boolean = '◩ ',
-        Array = ' ',
-        Object = ' ',
-        Key = ' ',
-        Null = 'ﳠ ',
-        EnumMember = ' ',
-        Struct = ' ',
-        Event = ' ',
-        Operator = ' ',
-        TypeParameter = ' ',
+        File = ' ',
+        Module = ' ',
+        Namespace = ' ',
+        Package = ' ',
+        Class = ' ',
+        Method = ' ',
+        Property = ' ',
+        Field = ' ',
+        Constructor = ' ',
+        Enum = ' ',
+        Interface = ' ',
+        Function = ' ',
+        Variable = ' ',
+        Constant = ' ',
+        String = ' ',
+        Number = ' ',
+        Boolean = ' ',
+        Array = ' ',
+        Object = ' ',
+        Key = ' ',
+        Null = ' ',
+        EnumMember = ' ',
+        Struct = ' ',
+        Event = ' ',
+        Operator = ' ',
+        TypeParameter = ' ',
       },
     },
   },
   {
-    'TimUntersberger/neogit',
+    'NeogitOrg/neogit',
     config = function() require 'custom.configs.neogit' end,
   },
   {
@@ -78,7 +79,15 @@ local plugins = {
     opts = {
       load = {
         ['core.defaults'] = {}, -- Loads default behaviour
-        ['core.concealer'] = {}, -- Adds pretty icons to your documents
+        ['core.concealer'] = {
+          config = {
+            icons = {
+              code_block = {
+                conceal = true,
+              },
+            },
+          },
+        }, -- Adds pretty icons to your documents
         ['core.dirman'] = { -- Manages Neorg workspaces
           config = {
             workspaces = {
@@ -88,7 +97,7 @@ local plugins = {
         },
       },
     },
-    dependencies = { { 'nvim-lua/plenary.nvim' } },
+    dependencies = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' },
   },
 }
 

@@ -49,6 +49,7 @@ M.add = {
   NavicIconsTypeParameter = { link = '@lsp.type.typeParameter' },
   NavicText = { link = '@text' },
   -- NavicSeparator = { link = '' },
+  LspInlayHint = { link = 'Comment' },
 }
 
 return M

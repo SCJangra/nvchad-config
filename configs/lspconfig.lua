@@ -13,8 +13,8 @@ local navic = require 'nvim-navic'
 -- if you just want default config for the servers then put them in a table
 local servers = {
   { name = 'rust_analyzer', formatting = true },
-  { name = 'tsserver',      formatting = false },
-  { name = 'bashls',        formatting = true },
+  { name = 'tsserver', formatting = false },
+  { name = 'bashls', formatting = true },
 }
 
 capabilities.textDocument.foldingRange = {
@@ -26,6 +26,7 @@ for _, s in ipairs(servers) do
   lspconfig[s.name].setup {
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
+      require('lsp-inlayhints').on_attach(client, bufnr)
 
       if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)
