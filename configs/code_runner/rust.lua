@@ -32,9 +32,9 @@ local commands = {
 
           vtb_test_default = input
           if input == '' then
-            runner 'carwgo test'
+            runner 'carwgo test --release'
           else
-            runner('cargo test -p ' .. input)
+            runner('cargo test --release -p ' .. input)
           end
         end)
       end,
