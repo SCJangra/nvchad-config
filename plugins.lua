@@ -18,8 +18,8 @@ local plugins = {
   },
 
   require 'custom.configs.telescope',
-    -- override plugin configs
-  { 'williamboman/mason.nvim', opts = overrides.mason },
+  require 'custom.configs.mason',
+
   { 'nvim-treesitter/nvim-treesitter', opts = overrides.treesitter },
   { 'nvim-tree/nvim-tree.lua', opts = overrides.nvimtree },
   { 'lewis6991/gitsigns.nvim', opts = overrides.gitsigns },
