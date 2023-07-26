@@ -25,7 +25,6 @@ set('n', '<leader>w', '<CMD>w<CR>', { desc = 'Save file' })
 -- Misc
 set('n', 'U', '<C-r>', { desc = 'Redo' })
 set('n', '<leader>d', '<CMD>DiffviewOpen<CR>', { desc = 'DiffView' })
-set('n', '<leader>e', '<CMD>NvimTreeToggle<CR>', { desc = 'Explorer' })
 set('n', '<leader>u', '<CMD>NvChadUpdate<CR>', { desc = 'Update NvChad' })
 set('t', '<C-x>', termcodes '<C-\\><C-N>', { desc = '   escape terminal mode' })
 set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to clipboard' })

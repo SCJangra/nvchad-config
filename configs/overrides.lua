@@ -11,25 +11,4 @@ M.gitsigns = {
   },
 }
 
--- git support in nvimtree
-M.nvimtree = {
-  git = {
-    enable = true,
-  },
-
-  view = {
-    signcolumn = 'yes',
-  },
-
-  renderer = {
-    highlight_git = true,
-    icons = {
-      git_placement = 'signcolumn',
-      show = {
-        git = true,
-      },
-    },
-  },
-}
-
 return M
