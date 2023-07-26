@@ -1,5 +1,3 @@
-local opt = vim.opt
-
 local on_attach = require('plugins.configs.lspconfig').on_attach
 local capabilities = require('plugins.configs.lspconfig').capabilities
 
@@ -7,8 +5,6 @@ local lspconfig = require 'lspconfig'
 
 local settings = require 'custom.configs.lspconfig.settings'
 local utils = require 'custom.utils'
-
-local navic = require 'nvim-navic'
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
@@ -27,11 +23,6 @@ for _, s in ipairs(servers) do
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
       require('lsp-inlayhints').on_attach(client, bufnr)
-
-      if client.server_capabilities.documentSymbolProvider then
-        navic.attach(client, bufnr)
-        opt.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-      end
 
       if s.formatting then
         client.server_capabilities.documentFormattingProvider = true

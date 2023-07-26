@@ -25,7 +25,6 @@ local plugins = {
   require 'custom.configs.code_runner',
   require 'custom.configs.dressing',
   require 'custom.configs.inlayhints',
-  require 'custom.configs.navic',
   require 'custom.configs.neogit',
   require 'custom.configs.neorg',
   require 'custom.configs.neotree',
