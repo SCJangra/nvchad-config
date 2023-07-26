@@ -28,6 +28,7 @@ local plugins = {
   require 'custom.configs.navic',
   require 'custom.configs.neogit',
   require 'custom.configs.neorg',
+  require 'custom.configs.neotree',
 }
 
 return plugins

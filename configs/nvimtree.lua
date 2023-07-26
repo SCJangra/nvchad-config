@@ -26,4 +26,5 @@ return {
   'nvim-tree/nvim-tree.lua',
   opts = opts,
   keys = keys,
+  enabled = false,
 }
