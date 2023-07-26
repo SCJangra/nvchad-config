@@ -1,6 +1,4 @@
-local M = {}
-
-M.gitsigns = {
+local opts = {
   signs = {
     add = { text = '▌' },
     change = { text = '▌' },
@@ -11,4 +9,7 @@ M.gitsigns = {
   },
 }
 
-return M
+return {
+  'lewis6991/gitsigns.nvim',
+  opts = opts,
+}

@@ -21,8 +21,7 @@ local plugins = {
   require 'custom.configs.mason',
   require 'custom.configs.treesitter',
   require 'custom.configs.nvimtree',
-
-  { 'lewis6991/gitsigns.nvim', opts = overrides.gitsigns },
+  require 'custom.configs.gitsigns',
 
   -- External plugins
   require 'custom.configs.code_runner',
