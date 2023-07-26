@@ -11,16 +11,6 @@ M.gitsigns = {
   },
 }
 
-M.treesitter = {
-  ensure_installed = 'all',
-  indent = {
-    enable = true,
-    -- disable = {
-    --   "python"
-    -- },
-  },
-}
-
 -- git support in nvimtree
 M.nvimtree = {
   git = {

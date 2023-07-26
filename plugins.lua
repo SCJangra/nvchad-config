@@ -19,8 +19,8 @@ local plugins = {
 
   require 'custom.configs.telescope',
   require 'custom.configs.mason',
+  require 'custom.configs.treesitter',
 
-  { 'nvim-treesitter/nvim-treesitter', opts = overrides.treesitter },
   { 'nvim-tree/nvim-tree.lua', opts = overrides.nvimtree },
   { 'lewis6991/gitsigns.nvim', opts = overrides.gitsigns },
 
