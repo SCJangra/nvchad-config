@@ -68,10 +68,7 @@ local plugins = {
       },
     },
   },
-  {
-    'NeogitOrg/neogit',
-    config = function() require 'custom.configs.neogit' end,
-  },
+  require 'custom.configs.neogit',
   {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
