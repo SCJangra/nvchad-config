@@ -16,13 +16,9 @@ local plugins = {
       require 'custom.configs.lspconfig'
     end, -- Override to setup mason-lspconfig
   },
-  {
-    'nvim-telescope/telescope.nvim',
-    opts = overrides.telescope,
-    dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  },
 
-  -- override plugin configs
+  require 'custom.configs.telescope',
+    -- override plugin configs
   { 'williamboman/mason.nvim', opts = overrides.mason },
   { 'nvim-treesitter/nvim-treesitter', opts = overrides.treesitter },
   { 'nvim-tree/nvim-tree.lua', opts = overrides.nvimtree },

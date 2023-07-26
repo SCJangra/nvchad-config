@@ -26,7 +26,6 @@ set('n', '<leader>w', '<CMD>w<CR>', { desc = 'Save file' })
 set('n', 'U', '<C-r>', { desc = 'Redo' })
 set('n', '<leader>d', '<CMD>DiffviewOpen<CR>', { desc = 'DiffView' })
 set('n', '<leader>e', '<CMD>NvimTreeToggle<CR>', { desc = 'Explorer' })
-set('n', '<leader>f', '<CMD>Telescope find_files<CR>', { desc = 'Find files' })
 set('n', '<leader>u', '<CMD>NvChadUpdate<CR>', { desc = 'Update NvChad' })
 set('t', '<C-x>', termcodes '<C-\\><C-N>', { desc = '   escape terminal mode' })
 set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Yank to clipboard' })
@@ -45,18 +44,6 @@ set('n', '<leader>ll', '<CMD>lua vim.diagnostic.open_float()<CR>', { desc = 'Sho
 set('n', '<leader>lj', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Next diagnostic' })
 set('n', '<leader>lk', '<CMD>lua vim.diagnostic.goto_next()<CR>', { desc = 'Prev diagnostic' })
 set('n', '<leader>lR', '<CMD>LspRestart<CR>', { desc = 'Restart' })
-
--- Search
-set('n', '<leader>st', '<CMD>Telescope live_grep<CR>', { desc = 'Text' })
-set('n', '<leader>sh', '<CMD>Telescope highlights<CR>', { desc = 'Highlights' })
-set('n', '<leader>sc', '<CMD>Telescope themes<CR>', { desc = 'Colorschemes' })
-set('n', '<leader>sp', '<CMD>Telescope resume<CR>', { desc = 'Resume previous search' })
-set('n', '<leader>sg', function()
-  vim.ui.input({ prompt = 'Enter grep text', center = true }, function(input)
-    if not input then return end
-    require('telescope.builtin').grep_string { search = input }
-  end)
-end, { desc = 'Grep string' })
 
 -- TBufLine
 set('n', 'L', '<CMD>lua require("nvchad_ui.tabufline").tabuflineNext()<CR>', { desc = 'Next buffer' })
