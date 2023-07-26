@@ -1,5 +1,3 @@
-local overrides = require 'custom.configs.overrides'
-
 ---@type NvPluginSpec[]
 local plugins = {
   {
@@ -26,71 +24,10 @@ local plugins = {
   -- External plugins
   require 'custom.configs.code_runner',
   require 'custom.configs.dressing',
-  { 'lvimuser/lsp-inlayhints.nvim', config = true },
-  {
-    'SmiteshP/nvim-navic',
-    dependencies = 'neovim/nvim-lspconfig',
-    opts = {
-      separator = '  ',
-      highlight = true,
-      icons = {
-        File = ' ',
-        Module = ' ',
-        Namespace = ' ',
-        Package = ' ',
-        Class = ' ',
-        Method = ' ',
-        Property = ' ',
-        Field = ' ',
-        Constructor = ' ',
-        Enum = ' ',
-        Interface = ' ',
-        Function = ' ',
-        Variable = ' ',
-        Constant = ' ',
-        String = ' ',
-        Number = ' ',
-        Boolean = ' ',
-        Array = ' ',
-        Object = ' ',
-        Key = ' ',
-        Null = ' ',
-        EnumMember = ' ',
-        Struct = ' ',
-        Event = ' ',
-        Operator = ' ',
-        TypeParameter = ' ',
-      },
-    },
-  },
+  require 'custom.configs.inlayhints',
+  require 'custom.configs.navic',
   require 'custom.configs.neogit',
-  {
-    'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
-    lazy = false,
-    opts = {
-      load = {
-        ['core.defaults'] = {}, -- Loads default behaviour
-        ['core.concealer'] = {
-          config = {
-            icons = {
-              code_block = {
-                conceal = true,
-              },
-            },
-          },
-        }, -- Adds pretty icons to your documents
-        ['core.dirman'] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              notes = '/run/media/scj/Storage/docs/neorg',
-            },
-          },
-        },
-      },
-    },
-    dependencies = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' },
-  },
+  require 'custom.configs.neorg',
 }
 
 return plugins
