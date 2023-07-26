@@ -23,7 +23,7 @@ local opts = {
 return {
   'nvim-neorg/neorg',
   build = ':Neorg sync-parsers',
-  lazy = false,
+  ft = 'norg',
   opts = opts,
   dependencies = { 'nvim-lua/plenary.nvim', 'sindrets/diffview.nvim' },
 }
