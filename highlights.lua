@@ -20,6 +20,7 @@ M.add = {
   DiagnosticUnderlineWarn = { undercurl = true, sp = 'yellow' },
   DiagnosticUnderlineError = { undercurl = true, sp = 'red' },
   TelescopeMatching = { link = 'IncSearch' },
+  FoldColumn = { link = 'Normal' },
 }
 
 return M

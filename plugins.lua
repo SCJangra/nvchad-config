@@ -28,6 +28,7 @@ local plugins = {
   require 'custom.configs.neogit',
   require 'custom.configs.neorg',
   require 'custom.configs.neotree',
+  require 'custom.configs.ufo',
 }
 
 return plugins
