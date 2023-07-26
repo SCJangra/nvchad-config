@@ -28,5 +28,5 @@ return {
   keys = keys,
   main = 'ufo',
   event = { 'LspAttach', 'BufReadPost' },
-  dependencies = 'kevinhwang91/promise-async',
+  dependencies = { 'kevinhwang91/promise-async', 'luukvbaal/statuscol.nvim' },
 }

@@ -17,7 +17,7 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.foldcolumn = '1' -- '0' is not bad
-opt.statuscolumn = '%s%=%l %C | '
+-- opt.statuscolumn = '%s%=%l %C | '
 
 -- Folding
 -- opt.foldmethod = 'expr'
