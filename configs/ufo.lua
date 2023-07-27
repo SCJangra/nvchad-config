@@ -28,11 +28,13 @@ local keys = {
   { 'zM', function() require('ufo').closeAllFolds() end, desc = 'Open all folds' },
 }
 
+vim.api.nvim_create_autocmd('BufEnter', { command = 'UfoAttach' })
+
 return {
   'kevinhwang91/nvim-ufo',
   opts = opts,
   keys = keys,
   main = 'ufo',
-  event = { 'LspAttach', 'BufReadPost' },
+  cmd = 'UfoAttach',
   dependencies = { 'kevinhwang91/promise-async' },
 }
