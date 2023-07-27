@@ -1,4 +1,5 @@
 local opts = {
+  use_popups_for_input = false,
   filesystem = {
     follow_current_file = { enabled = true },
     hijack_netrw_behavior = 'open_current',
