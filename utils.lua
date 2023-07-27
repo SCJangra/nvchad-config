@@ -7,9 +7,7 @@ M.setup_auto_format = function(client, bufnr)
     vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = bufnr,
       callback = function()
-        if format then
-          vim.lsp.buf.format { buffer = bufnr }
-        end
+        if format then vim.lsp.buf.format { buffer = bufnr } end
       end,
     })
 
@@ -23,6 +21,16 @@ M.setup_auto_format = function(client, bufnr)
       end
     end, { desc = 'Toggle auto format', buffer = bufnr })
   end
+end
+
+M.tbl_contains_match = function(tbl, str)
+  for _, m in ipairs(tbl) do
+    local sub = str:sub(1, #m)
+
+    if sub == m then return true end
+  end
+
+  return false
 end
 
 return M

@@ -1,3 +1,7 @@
+local g = vim.g
+
+local utils = require 'custom.utils'
+
 local on_fallback_exception = function(bufnr, err, fallback)
   if type(err) == 'string' and err:match 'UfoFallbackException' then
     return require('ufo').getFolds(bufnr, fallback)
@@ -6,7 +10,9 @@ local on_fallback_exception = function(bufnr, err, fallback)
   end
 end
 
-local provider_selector = function(bufnr)
+local provider_selector = function(bufnr, filetype)
+  if utils.tbl_contains_match(g.fold_ignore_ft, filetype) then return '' end
+
   require('ufo')
     .getFolds(bufnr, 'lsp')
     :catch(function(err) on_fallback_exception(bufnr, err, 'treesitter') end)
@@ -28,5 +34,5 @@ return {
   keys = keys,
   main = 'ufo',
   event = { 'LspAttach', 'BufReadPost' },
-  dependencies = { 'kevinhwang91/promise-async', 'luukvbaal/statuscol.nvim' },
+  dependencies = { 'kevinhwang91/promise-async' },
 }

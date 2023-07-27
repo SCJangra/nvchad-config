@@ -29,7 +29,6 @@ local plugins = {
   require 'custom.configs.neorg',
   require 'custom.configs.neotree',
   require 'custom.configs.ufo',
-  require 'custom.configs.statuscolumn',
 }
 
 return plugins
