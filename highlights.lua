@@ -20,7 +20,12 @@ M.add = {
   DiagnosticUnderlineWarn = { undercurl = true, sp = 'yellow' },
   DiagnosticUnderlineError = { undercurl = true, sp = 'red' },
   TelescopeMatching = { link = 'IncSearch' },
-  FoldColumn = { link = 'Normal' },
+  FoldColumn = { link = 'Comment' },
+  LspInlayHint = { link = 'Comment' },
+  NeogitDiffAdd = { link = 'GitSignsAdd' },
+  NeogitDiffDelete = { link = 'GitSignsDelete' },
+  NeogitDiffAddHighlight = { link = 'GitSignsAdd' },
+  NeogitDiffDeleteHighlight = { link = 'GitSignsDelete' },
 }
 
 return M
