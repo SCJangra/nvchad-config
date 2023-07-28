@@ -1,5 +1,4 @@
 local o, g = vim.o, vim.g
-local utils = require 'custom.utils'
 
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
@@ -17,14 +16,4 @@ local get_fold = function(lnum)
   return vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
 end
 
-_G.get_status_col = function()
-  local fold
-
-  if utils.tbl_contains_match(vim.g.fold_ignore_ft, vim.o.filetype) then
-    fold = ''
-  else
-    fold = ' ' .. get_fold(vim.v.lnum) .. ' '
-  end
-
-  return '%s%=%l' .. fold
-end
+_G.get_status_col = function() return '%s%=%l ' .. get_fold(vim.v.lnum) .. ' ' end
