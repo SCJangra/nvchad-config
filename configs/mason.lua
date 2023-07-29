@@ -5,6 +5,7 @@ local opts = {
     'rust-analyzer',
     'typescript-language-server',
     'bash-language-server',
+    'json-lsp',
   },
 }
 
