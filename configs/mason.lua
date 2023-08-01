@@ -6,6 +6,7 @@ local opts = {
     'typescript-language-server',
     'bash-language-server',
     'json-lsp',
+    'prettierd',
   },
 }
 
