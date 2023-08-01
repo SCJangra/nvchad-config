@@ -1,11 +1,8 @@
 local opts = {
   lsp = {
-    signature = {
-      enabled = false,
-    },
-    hover = {
-      enabled = false,
-    },
+    signature = { enabled = false },
+    hover = { enabled = false },
+    progress = { enabled = false },
   },
   -- you can enable a preset for easier configuration
   presets = {
